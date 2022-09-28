@@ -44,3 +44,16 @@ Route::get('/page4/{name?}', function ($name="user") {
 Route::get('/redirect', function () {
     return redirect('/page4');
 });
+/*
+ * Les contraintes
+ * */
+Route::get('/hello/{name}', function ($name) {
+    echo  "<h2>Hello, ".$name." </h2>";
+})->whereAlpha('name');
+
+Route::get('/user/{id}', function ($id) {
+    echo  "<h2>Hello user with id :  ".$id." </h2>";
+})->where('id','[0-9]+');
+Route::get('/test/{id}', function ($id) {
+    echo  "<h2>Hello user with id :  ".$id." </h2>";
+});
