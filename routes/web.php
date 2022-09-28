@@ -57,3 +57,16 @@ Route::get('/user/{id}', function ($id) {
 Route::get('/test/{id}', function ($id) {
     echo  "<h2>Hello user with id :  ".$id." </h2>";
 });
+/*
+ * Les réponses
+ * */
+Route::get('resp',function (){
+    return response("hello worls",200)
+        ->header('Content_Type','text/plain');
+});
+Route::get('respJson',function (){
+    return response()->json([
+        'name'=>'khouloud',
+        'age'=>23
+    ]);
+});
