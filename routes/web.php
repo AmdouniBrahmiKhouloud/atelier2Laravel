@@ -70,3 +70,8 @@ Route::get('respJson',function (){
         'age'=>23
     ]);
 });
+/*
+ * controller
+ * */
+Route::get('/home',[\App\Http\Controllers\HomeController::class ,'index']);
+Route::get('/show',[\App\Http\Controllers\HomeController::class ,'show']);
