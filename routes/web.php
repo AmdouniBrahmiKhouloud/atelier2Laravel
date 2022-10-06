@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\ModuleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,8 @@ Route::get('respJson',function (){
  * */
 Route::get('/home',[\App\Http\Controllers\HomeController::class ,'index']);
 Route::get('/show',[\App\Http\Controllers\HomeController::class ,'show']);
+Route::get('/register', function () {
+    return view('form');
+});
+Route::get('/module',[ModuleController::class ,'index']);
+
